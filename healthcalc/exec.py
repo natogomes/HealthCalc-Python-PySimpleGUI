@@ -35,8 +35,8 @@ acima ou abaixo do peso desejado.''', font='arial 12', title='Índice de Massa C
                 continue
             peso = float(f'{values["peso"]}'.replace(',', '.'))
             altura = float(f'{values["altura"]}'.replace(',', '.'))
-            print(f'PESO: {peso}')
-            print(f'ALTURA: {altura}')
+            print(f'PESO: {peso}Kg.')
+            print(f'ALTURA: {altura}m.')
             print(f'O seu índice de massa corporal é:\n{imc(peso, altura)}')
             print('-' * 66)
             continue

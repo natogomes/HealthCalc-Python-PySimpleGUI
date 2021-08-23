@@ -39,11 +39,11 @@ def glicemy(valor):
     if valor <= 70:
         return '>> HIPOGLICEMIA <<\n Adote hábitos de vida saudáveis\n e procure um profissional'
     elif valor < 100:
-        return 'NORMAL'
+        return '>> NORMAL <<\n Mantenha hábitos de vida saudáveis'
     elif 100 <= valor <= 125:
-        return 'ALTERADA'
+        return '>> ALTERADA <<\n Adote hábitos de vida saudáveis\n e procure um profissional'
     elif valor >= 126:
-        return 'DIABETES'
+        return '>> DIABETES <<\n Adote hábitos de vida saudáveis\n e procure um profissional'
 
 
 def presart(max, min):
@@ -55,17 +55,19 @@ def presart(max, min):
     By: Renato Gomes
     """
     if max <= 12 and min <= 8:
-        return '>> ÓTIMA <<'
+        return '>> ÓTIMA <<\nMantenha hábitos de vida saudáveis!'
     elif max < 13 and min < 8.5:
-        return '>> NORMAL <<'
+        return '>> NORMAL <<\nMantenha hábitos de vida saudáveis!'
     elif 13 <= max < 14 or 8.5 <= min < 9:
-        return '>> LIMÍTROFE OU ALTERADA <<'
+        return '>> LIMÍTROFE OU ALTERADA <<\nAdote hábitos de vida saudáveis\ne procure um profissional de saúde'
     elif 14 <= max < 16 or 9 <= min < 10:
-        return '>> HIPERTENSÃO ESTAGIO 1 (Leve) <<'
+        return '>> HIPERTENSÃO ESTAGIO 1 (Leve) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de saúde'
     elif 16 <= max < 18 or 10 <= min < 11:
-        return '>> HIPERTENSÃO ESTAGIO 2 (Moderada) <<'
+        return '>> HIPERTENSÃO ESTAGIO 2 (Moderada) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
+               'saúde '
     elif max >= 18 or min >= 11:
-        return 'HIPERTENSÃO ESTAGIO 3 (Grave)'
+        return '>> HIPERTENSÃO ESTAGIO 3 (Grave) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
+               'saúde '
 
 
 def dieta(san):
