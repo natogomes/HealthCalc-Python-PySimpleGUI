@@ -36,6 +36,7 @@ def glicemy(valor):
     :return: Retorna uma condição de acordo com o nível glicemico.
     By Renato Gomes.
     """
+
     if valor <= 70:
         return '>> HIPOGLICEMIA <<\n Adote hábitos de vida saudáveis\n e procure um profissional'
     elif valor < 100:
@@ -61,19 +62,19 @@ def presart(max, min):
     elif 13 <= max < 14 or 8.5 <= min < 9:
         return '>> LIMÍTROFE OU ALTERADA <<\nAdote hábitos de vida saudáveis\ne procure um profissional de saúde'
     elif 14 <= max < 16 or 9 <= min < 10:
-        return '>> HIPERTENSÃO ESTAGIO 1 (Leve) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de saúde'
+        return '>> HIPERTENSÃO ESTÁGIO 1 (Leve) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de saúde'
     elif 16 <= max < 18 or 10 <= min < 11:
-        return '>> HIPERTENSÃO ESTAGIO 2 (Moderada) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
+        return '>> HIPERTENSÃO ESTÁGIO 2 (Moderada) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
                'saúde '
     elif max >= 18 or min >= 11:
-        return '>> HIPERTENSÃO ESTAGIO 3 (Grave) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
+        return '>> HIPERTENSÃO ESTÁGIO 3 (Grave) <<\nAdote hábitos de vida saudáveis\ne procure um profissional de ' \
                'saúde '
 
 
 def dieta(san):
     sangue = str(san).strip().upper()
 
-    if sangue == 'O+O-':
+    if sangue in 'O+O-':
         print(f'  São carnívoros com aparelho intestinal forte\n'
               'e necessitam comer proteínas animais diariamente,\n'
               'caso contrário, estão propensos a desenvolver doenças\n'
@@ -106,7 +107,7 @@ def dieta(san):
               'CEREAIS: aveia, trigo, cuscuz e pão branco\n'
               'OUTROS: óleo de milho, óleo de amendoim')
 
-    elif sangue == 'A-A+':
+    elif sangue in 'A-A+':
         print('  São vegetarianos com aparelho intestinal sensível\n'
               'e têm dificuldades para digerir proteínas de origem\n'
               'animal, pois sua produção de suco gástrico é mais limitada.\n')
@@ -116,7 +117,7 @@ def dieta(san):
               'LATICÍNEOS: queijo de soja, tofu\n'
               'FRUTAS: abacaxi, ameixa, cereja, figo, limão, amora, damasco\n'
               'VERDURA: abóbora moranga, alface romana, acelga,\n'
-              'brócolis, cenoura, acelga, alcachofra, cebola\n'
+              'brócolis, cenoura, alcachofra, cebola\n'
               'CEREAIS: farinhas de centeio, arroz, soja,\n'
               'aveia, pão de farinha de soja\n'
               'OUTROS: alho, molho de soja, missô, melaço de cana, \n'
@@ -146,7 +147,7 @@ def dieta(san):
               'OUTROS: alcaparras, gelatina pura, pimenta em grão, vinagre,\n'
               'cerveja, licor, chá preto, refrigerante.\n')
 
-    elif sangue == 'B-B+':
+    elif sangue in 'B-B+':
         print('  Podem tolerar dieta mais variadas é o único tipo\n'
               ' de sangue que tolera bem laticínios em geral.\n')
         print('ALIMENTOS POSITIVOS:\n'
@@ -180,7 +181,7 @@ def dieta(san):
               'OUTROS: canela, maisena, pimenta branca e do reino,\n'
               'gelatina pura, refrigerantes, bebidas destiladas.\n')
 
-    elif sangue == 'AB':
+    elif sangue in 'AB':
         print('  Necessitam de uma dieta equilibrada contendo um pouco de tudo.\n')
         print('ALIMENTOS POSITIVOS:\n'
               'CARNES: carneiro, coelho, cordeiro e peru.\n'

@@ -21,7 +21,7 @@ def tela_ini():
     return ps.Window('HealthCalc', layout=layout, finalize=True)
 
 
-def tela2i():
+def tela_imc():
     ps.theme('DarkBrown1')
     layout = [
         [ps.Text(f'{"INDICE DE MASSA CORPORAL"}'.center(35), font='arial 15', background_color='Brown', )],
@@ -35,7 +35,7 @@ def tela2i():
     return ps.Window('Índice de Massa Corporal', modal=True, layout=layout, finalize=True)
 
 
-def tela2g():
+def tela_gli():
     ps.theme('DarkBrown1')
     layout = [
         [ps.Text(f'{"NÍVEL DE GLICEMIA"}'.center(44), font='arial 15', background_color='Brown', )],
@@ -47,7 +47,7 @@ def tela2g():
     return ps.Window('Glicemia', layout=layout, modal=True, finalize=True)
 
 
-def tela2p():
+def tela_pa():
     ps.theme('DarkBrown1')
     layout = [
         [ps.Text(f'{"PRESSÃO ARTERIAL"}'.center(42), font='arial 15', background_color='Brown')],
@@ -61,7 +61,7 @@ def tela2p():
     return ps.Window('Pressão Arterial', layout=layout, modal=True, finalize=True)
 
 
-def tela2d():
+def tela_sangue():
     ps.theme('DarkBrown1')
     layout = [
         [ps.Text(f'{"DIETA DO TIPO SANGUÍNEO"}'.center(61), font='arial 15', background_color='Brown')],
