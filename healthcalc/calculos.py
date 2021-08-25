@@ -212,6 +212,10 @@ def dieta(san):
               'OUTROS: alcaparras, tapioca, vinagre, mel de milho, anis,\n'
               'maisena, malte de cevada, pimenta do reino e vermelha.\n')
 
+    else:
+        ps.Popup('Iforme um valor válido!', title='ERRO!')
+
+
 
 
 
