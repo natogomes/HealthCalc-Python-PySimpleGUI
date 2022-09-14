@@ -2,72 +2,131 @@ import PySimpleGUI as ps
 
 
 def tela_ini():
+    """
+    -> Cria a janela inicial do programa.
+    :return: Sem retorno.
+    """
     ps.theme('DarkBrown1')
-    layout = [
-        [ps.Text(f'{"HEALTHCALC"}'.center(83), font='Monoton 20', background_color='Brown', key='titulo')],
+
+    introducao = [
         [ps.Text('HEALTHCALC é um aplicativo voltado para monitoramento '
-                 'da sua saúde.\n'
-                 'Baseado em cálculos com os dados mais atuais.\n'
-                 'Observação: Esse programa não substitui o profissional de saúde!', justification='center')],
-        [ps.Text('_' * 61)],
-        [ps.Checkbox('IMC', size=(15, 1), font='arial 14', key='imc'), ps.Checkbox('DIETA DO SANGUE', font='arial 14',
-                                                                                   key='d.t.s')],
-        [ps.Checkbox('GLICEMIA', size=(15, 1), font='arial 14', key='glicemia'), ps.Checkbox('PRESSÃO ARTERIAL',
-                                                                                             font='arial 14',
-                                                                                             key='p.a')],
-        [ps.Text('_' * 61)],
-        [ps.Button('Próximo')]
+                 'da sua saúde\n'
+                 'baseado em cálculos com os dados mais atuais.\n'
+                 'Observação: Esse programa não substitui o profissional de saúde!', justification='center',
+                 font='arial 12')]
     ]
-    return ps.Window('HealthCalc', layout=layout, finalize=True)
+    checkbox = [
+        [ps.Checkbox('IMC', size=(15, 1), pad=((10, 0), 10), font='arial 14', key='imc'),
+         ps.Checkbox('DIETA DO SANGUE', pad=((70, 10), 10), font='arial 14', key='d.t.s')],
+        [ps.Checkbox('GLICEMIA', size=(15, 1), pad=((10, 0), 10), font='arial 14', key='glicemia'),
+         ps.Checkbox('PRESSÃO ARTERIAL', pad=((70, 10), 10), font='arial 14', key='p.a')],
+    ]
+
+    layout = [
+        [ps.Text(f'{"HEALTHCALC"}'.center(53), font='Monoton 20', background_color='Brown', key='titulo')],
+        [ps.Column(introducao)],
+        [ps.Frame('', layout=checkbox, pad=(0, 10))],
+        [ps.Button('Próximo', font='arial 12', size=(10, 1)),
+         ps.CButton('Sair', font='arial 12', size=(6, 1))]
+    ]
+    return ps.Window('HealthCalc', element_justification='center', layout=layout, size=(552, 300), finalize=True)
 
 
 def tela_imc():
+    """
+    -> Cria a janela para consulta do índice de massa corporal.
+    :return: Sem retorno.
+    """
     ps.theme('DarkBrown1')
-    layout = [
-        [ps.Text(f'{"INDICE DE MASSA CORPORAL"}'.center(35), font='arial 15', background_color='Brown', )],
-        [ps.Text('Peso:', size=(12, 1), justification='right', font='arial 12'),
-         ps.InputText(size=(5, 0), key='peso', text_color='white', font='arial 11'),
+
+    main = [
+        [ps.Text('Peso:', size=(0, 1), font='arial 12'),
+         ps.InputText(size=(5, 0), key='peso', text_color='white', font='arial 12'),
          ps.Text('Altura:', font='arial 12'),
-         ps.InputText(size=(5, 0), key='altura', font='arial 11', text_color='white')],
-        [ps.Output(size=(42, 8), text_color='white', font='arial 11')],
-        [ps.Button('Voltar'), ps.Button('Verificar'), ps.Button('Fechar')]
+         ps.InputText(size=(5, 0), key='altura', font='arial 12', text_color='white')],
+        [ps.Output(size=(60, 8), text_color='white', font='arial 12', key='saida_imc')],
     ]
-    return ps.Window('Índice de Massa Corporal', modal=True, layout=layout, finalize=True)
+
+    layout = [
+        [ps.Text(f'{"INDICE DE MASSA CORPORAL"}'.center(55), font='Monoton 17', background_color='Brown')],
+        [ps.Column(main, element_justification='center', pad=(0, 12))],
+        [ps.Button('Voltar', font='arial 12', size=(8, 1)),
+         ps.Button('Verificar', font='arial 12', size=(10, 1)),
+         ps.Button('Fechar', font='arial 12', size=(8, 1))]
+    ]
+    return ps.Window('Índice de Massa Corporal', size=(552, 300), element_justification='center',
+                     modal=True, layout=layout, finalize=True)
 
 
 def tela_gli():
+    """
+    -> Cria janela para consulta da glicemia.
+    :return: Sem retorno.
+    """
     ps.theme('DarkBrown1')
-    layout = [
-        [ps.Text(f'{"NÍVEL DE GLICEMIA"}'.center(44), font='arial 15', background_color='Brown', )],
-        [ps.Text('mgdl:', size=(17, 1), font='arial 12', justification='right'),
-         ps.Input(size=(5, 0), key='glic', text_color='white', font='arial 11')],
-        [ps.Output(size=(42, 8), text_color='white', font='arial 11')],
-        [ps.Button('Voltar'), ps.Button('Verificar'), ps.Button('Fechar')]
+
+    main = [
+        [ps.Text('mgdl:', font='arial 12'),
+         ps.Input(size=(5, 0), key='glic', text_color='white', font='arial 12')],
+        [ps.Output(size=(60, 8), text_color='white', font='arial 12', key='saida_glic')]
     ]
-    return ps.Window('Glicemia', layout=layout, modal=True, finalize=True)
+
+    layout = [
+        [ps.Text(f'{"NÍVEL DE GLICEMIA"}'.center(70), font='Monoton 17', background_color='Brown')],
+        [ps.Column(main, element_justification='center', pad=(0, 12))],
+        [ps.Button('Voltar', font='arial 12', size=(8, 1)),
+         ps.Button('Verificar', font='arial 12', size=(10, 1)),
+         ps.Button('Fechar', font='arial 12', size=(8, 1))]
+    ]
+    return ps.Window('Glicemia', layout=layout, size=(552, 300), element_justification='center',
+                     modal=True, finalize=True)
 
 
 def tela_pa():
+    """
+    -> Cria a janela para consulta do estado da pressão arterial.
+    :return: Sem retorno.
+    """
     ps.theme('DarkBrown1')
-    layout = [
-        [ps.Text(f'{"PRESSÃO ARTERIAL"}'.center(42), font='arial 15', background_color='Brown')],
-        [ps.Text('Sistólica:', font='arial 12', size=(12, 1), justification='right'),
-         ps.Input(size=(5, 1), key='p1', font='arial 11', text_color='white'),
+
+    main = [
+        [ps.Text('Sistólica:', font='arial 12'),
+         ps.Input(size=(5, 1), key='p1', font='arial 12', text_color='white'),
          ps.Text('Diastólica:', font='arial 12', ),
-         ps.Input(size=(5, 0), key='p2', font='arial 11', text_color='white')],
-        [ps.Output(size=(42, 8), text_color='white', font='arial 11')],
-        [ps.Button('Voltar'), ps.Submit('Verificar'), ps.Button('Fechar')]
+         ps.Input(size=(5, 0), key='p2', font='arial 12', text_color='white')],
+        [ps.Output(size=(60, 8), text_color='white', font='arial 12', key='saida_p.a')],
     ]
-    return ps.Window('Pressão Arterial', layout=layout, modal=True, finalize=True)
+
+    layout = [
+        [ps.Text(f'{"PRESSÃO ARTERIAL"}'.center(70), font='Monoton 17', background_color='Brown')],
+        [ps.Column(main, element_justification='center', pad=(0, 12))],
+        [ps.Button('Voltar', font='arial 12', size=(8, 1)),
+         ps.Button('Verificar', font='arial 12', size=(10, 1)),
+         ps.Button('Fechar', font='arial 12', size=(8, 1))]
+    ]
+    return ps.Window('Pressão Arterial', layout=layout, size=(552, 300), element_justification='center',
+                     modal=True, finalize=True)
 
 
 def tela_sangue():
+    """
+    -> Cria janela para consulta da dieta de acordo com tipo saguíneo.
+    :return: Sem retorno.
+    """
     ps.theme('DarkBrown1')
-    layout = [
-        [ps.Text(f'{"DIETA DO TIPO SANGUÍNEO"}'.center(61), font='arial 15', background_color='Brown')],
-        [ps.Text('Tipo sanguíneo:', font='arial 12', size=(30, 1), justification='right'),
-         ps.InputText(size=(5, 1), key='sangue', font='arial 11', text_color='white')],
-        [ps.Output(size=(60, 15), key='retorno', text_color='white', font='arial 11')],
-        [ps.Button('Voltar'), ps.Submit('Verificar'), ps.Button('Fechar')]
+
+    main = [
+        [ps.Text('Tipo sanguíneo:', font='arial 12'),
+         ps.InputText(size=(5, 1), key='sangue', font='arial 12', text_color='white')],
+        [ps.Output(size=(60, 8), key='saida_dts', text_color='white', font='arial 12')],
     ]
-    return ps.Window('Tipo sanguíneo', layout=layout, modal=True, finalize=True)
+
+    layout = [
+        [ps.Text(f'{"DIETA DO TIPO SANGUÍNEO"}'.center(60), font='Monoton 17', background_color='Brown')],
+        [ps.Column(main, element_justification='center', pad=(0, 12))],
+        [ps.Button('Voltar', font='arial 12', size=(8, 1)),
+         ps.Button('Verificar', font='arial 12', size=(10, 1)),
+         ps.Button('Fechar', font='arial 12', size=(8, 1))]
+    ]
+    return ps.Window('Tipo sanguíneo', layout=layout, modal=True, size=(552, 300), element_justification='center',
+                     finalize=True)
