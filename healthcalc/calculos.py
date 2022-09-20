@@ -47,7 +47,7 @@ def glicemy(valor):
         return '>> DIABETES <<\n Adote hábitos de vida saudáveis e procure um profissional'
 
 
-def presart(max, min):
+def presart(sist, diast):
     """
     Calcula os valores da pressão arterial.
     :param max: Recebe o valor da pressão máxima.
@@ -55,20 +55,23 @@ def presart(max, min):
     :return: Retorna o resultado de acordo com a OMS.
     By: Renato Gomes
     """
-    if max <= 12 and min <= 8:
+    if sist <= 12 and diast <= 8:
         return '>> ÓTIMA <<\nMantenha hábitos de vida saudáveis!'
-    elif max < 13 and min < 8.5:
+    elif sist < 13 and diast < 8.5:
         return '>> NORMAL <<\nMantenha hábitos de vida saudáveis!'
-    elif 13 <= max < 14 or 8.5 <= min < 9:
+    elif 13 <= sist < 14 and 8.5 <= diast < 9:
         return '>> LIMÍTROFE OU ALTERADA <<\nAdote hábitos de vida saudáveis e procure um profissional de saúde'
-    elif 14 <= max < 16 or 9 <= min < 10:
+    elif 14 <= sist < 16 and 9 <= diast < 10:
         return '>> HIPERTENSÃO ESTÁGIO 1 (Leve) <<\nAdote hábitos de vida saudáveis e procure um profissional de saúde'
-    elif 16 <= max < 18 or 10 <= min < 11:
+    elif 16 <= sist < 18 and 10 <= diast < 11:
         return '>> HIPERTENSÃO ESTÁGIO 2 (Moderada) <<\nAdote hábitos de vida saudáveis e procure um profissional de ' \
                'saúde '
-    elif max >= 18 or min >= 11:
+    elif sist >= 18 and diast >= 11:
         return '>> HIPERTENSÃO ESTÁGIO 3 (Grave) <<\nAdote hábitos de vida saudáveis e procure um profissional de ' \
                'saúde '
+    else:
+        return '>> NÃO EXISTE UM VALOR RELACIONADO <<\nVerique se os valores foram passados corretamente'
+
 
 
 def dieta(san):

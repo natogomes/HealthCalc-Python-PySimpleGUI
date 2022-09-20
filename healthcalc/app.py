@@ -18,13 +18,13 @@ while True:
                  'está dentro do seu peso ideal em relação à altura.'
                  'Assim, de acordo com o valor do resultado de IMC, '
                  'a pessoa pode saber se está dentro do peso ideal, '
-                 'acima ou abaixo do peso desejado.', font='arial 12', title='Índice de Massa Corporal')
+                 'acima ou abaixo do peso desejado.', font='arial 12', icon='logo.ico', title='Índice de Massa Corporal')
         t2 = tela_imc()
         while True:
             window, event, values = ps.read_all_windows()
             if event == 'Voltar':
-                window.close()
                 t1 = tela_ini()
+                window.close()
                 break
 
             if event == ps.WIN_CLOSED:
@@ -55,13 +55,14 @@ while True:
                  'consumo de qualquer alimento ou bebida, exceto água. '
                  'Este exame é muito utilizado para investigar o diagnóstico '
                  'de diabetes, e para monitorar as taxas de açúcar no sangue '
-                 'de pessoas diabéticas ou com risco para esta doença.', font='arial 12', title='Glicemia de Jejum')
+                 'de pessoas diabéticas ou com risco para esta doença.', icon='logo.ico',
+                 font='arial 12', title='Glicemia de Jejum')
         t2 = tela_gli()
         while True:
             window, event, values = ps.read_all_windows()
             if event == 'Voltar':
-                window.close()
                 t1 = tela_ini()
+                window.close()
                 break
 
             elif event == 'Fechar':
@@ -86,13 +87,14 @@ while True:
                  'com que o fluxo de sangue passa pelas suas artérias. '
                  'Para isso, os valores de referência são representados '
                  'em milímetros de mercúrio (mmHg), sendo composto por duas '
-                 'medidas, denominadas como SISTÓLICA e DIASTÓLICA.', font='arial 12', title='Pressão arterial')
+                 'medidas, denominadas como SISTÓLICA e DIASTÓLICA.', icon='logo.ico',
+                 font='arial 12', title='Pressão arterial')
         t2 = tela_pa()
         while True:
             window, event, values = ps.read_all_windows()
             if event == 'Voltar':
-                window.close()
                 t1 = tela_ini()
+                window.close()
                 break
 
             elif event == 'Fechar':
@@ -124,13 +126,14 @@ while True:
                  'naturopata Peter d Adamo e publicada em seu livro ' 
                  '"Eat right for your type" que significa '
                  '"Alimente-se corretamente deacordo com seu tipo de sangue" '
-                 'publicado em 1996 nos Estados Unidos da América.', font='arial 12', title='Dieta do tipo sanguíneo')
+                 'publicado em 1996 nos Estados Unidos da América.', icon='logo.ico',
+                 font='arial 12', title='Dieta do tipo sanguíneo')
         t2 = tela_sangue()
         while True:
             window, event, values = ps.read_all_windows()
             if event == 'Voltar':
-                window.close()
                 t1 = tela_ini()
+                window.close()
                 break
 
             elif event == 'Fechar':
@@ -147,7 +150,7 @@ while True:
             dieta(s)
 
     elif event == 'Próximo':
-        ps.popup('Informe uma opção!', font='arial 12', title='ERRO!')
+        ps.popup('  Informe uma opção!  ', icon='logo.ico', font='arial 12', title='ERRO!')
 
 
 

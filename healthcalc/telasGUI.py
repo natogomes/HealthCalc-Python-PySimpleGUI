@@ -12,24 +12,24 @@ def tela_ini():
         [ps.Text('HEALTHCALC é um aplicativo voltado para monitoramento '
                  'da sua saúde\n'
                  'baseado em cálculos com os dados mais atuais.\n'
-                 'Observação: Esse programa não substitui o profissional de saúde!', justification='center',
+                 'ESTE PROGRAMA NÃO SUBSTITUI O PROFISSIONAL DE SAÚDE.', justification='center',
                  font='arial 12')]
     ]
     checkbox = [
         [ps.Checkbox('IMC', size=(15, 1), pad=((10, 0), 10), font='arial 14', key='imc'),
-         ps.Checkbox('DIETA DO SANGUE', pad=((70, 10), 10), font='arial 14', key='d.t.s')],
+         ps.Checkbox('DIETA DO SANGUE', pad=((40, 10), 10), font='arial 14', key='d.t.s')],
         [ps.Checkbox('GLICEMIA', size=(15, 1), pad=((10, 0), 10), font='arial 14', key='glicemia'),
-         ps.Checkbox('PRESSÃO ARTERIAL', pad=((70, 10), 10), font='arial 14', key='p.a')],
+         ps.Checkbox('PRESSÃO ARTERIAL', pad=((40, 10), 10), font='arial 14', key='p.a')],
     ]
 
     layout = [
-        [ps.Text(f'{"HEALTHCALC"}'.center(53), font='Monoton 20', background_color='Brown', key='titulo')],
+        [ps.Image('logo.png', key='titulo')],
         [ps.Column(introducao)],
         [ps.Frame('', layout=checkbox, pad=(0, 10))],
         [ps.Button('Próximo', font='arial 12', size=(10, 1)),
          ps.CButton('Sair', font='arial 12', size=(6, 1))]
     ]
-    return ps.Window('HealthCalc', element_justification='center', layout=layout, size=(552, 300), finalize=True)
+    return ps.Window('HealthCalc', icon='logo.ico', element_justification='center', layout=layout, size=(552, 300), finalize=True)
 
 
 def tela_imc():
@@ -54,7 +54,7 @@ def tela_imc():
          ps.Button('Verificar', font='arial 12', size=(10, 1)),
          ps.Button('Fechar', font='arial 12', size=(8, 1))]
     ]
-    return ps.Window('Índice de Massa Corporal', size=(552, 300), element_justification='center',
+    return ps.Window('Índice de Massa Corporal', icon='logo.ico', size=(552, 300), element_justification='center',
                      modal=True, layout=layout, finalize=True)
 
 
@@ -78,7 +78,7 @@ def tela_gli():
          ps.Button('Verificar', font='arial 12', size=(10, 1)),
          ps.Button('Fechar', font='arial 12', size=(8, 1))]
     ]
-    return ps.Window('Glicemia', layout=layout, size=(552, 300), element_justification='center',
+    return ps.Window('Glicemia', icon='logo.ico', layout=layout, size=(552, 300), element_justification='center',
                      modal=True, finalize=True)
 
 
@@ -104,7 +104,7 @@ def tela_pa():
          ps.Button('Verificar', font='arial 12', size=(10, 1)),
          ps.Button('Fechar', font='arial 12', size=(8, 1))]
     ]
-    return ps.Window('Pressão Arterial', layout=layout, size=(552, 300), element_justification='center',
+    return ps.Window('Pressão Arterial', icon='logo.ico', layout=layout, size=(552, 300), element_justification='center',
                      modal=True, finalize=True)
 
 
@@ -128,5 +128,5 @@ def tela_sangue():
          ps.Button('Verificar', font='arial 12', size=(10, 1)),
          ps.Button('Fechar', font='arial 12', size=(8, 1))]
     ]
-    return ps.Window('Tipo sanguíneo', layout=layout, modal=True, size=(552, 300), element_justification='center',
+    return ps.Window('Tipo sanguíneo', icon='logo.ico', layout=layout, modal=True, size=(552, 300), element_justification='center',
                      finalize=True)

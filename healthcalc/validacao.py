@@ -11,7 +11,7 @@ def valid_str(valor):
     while not valido:
         entrada = str(valor).replace(',', '.').strip().upper()
         if entrada.isnumeric() or entrada == '':
-            ps.Popup('ERRO! Digite um valor válido', font='arial 12', title='ERRO!')
+            ps.Popup('ERRO! Digite um valor válido', icon='logo.ico', font='arial 12', title='ERRO!')
             break
         else:
             valido = True
@@ -29,7 +29,7 @@ def valid_int(valor):
         try:
             entrada = int(valor)
         except:
-            ps.Popup('ERRO! Digite um número Inteiro válido!', font='arial 12', title='ERRO!')
+            ps.Popup('ERRO! Digite um número Inteiro válido!', icon='logo.ico', font='arial 12', title='ERRO!')
             break
         else:
             valido = True
@@ -49,7 +49,7 @@ def valid_float(valor1, valor2):
             entrada1 = float(valor1)
             entrada2 = float(valor2)
         except:
-            ps.Popup('ERRO! Digite um valor válido!', font='arial 12', title='ERRO!')
+            ps.Popup('ERRO! Digite um valor válido!', icon='logo.ico', font='arial 12', title='ERRO!')
             break
         else:
             valido = True
